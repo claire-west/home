@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claire West | Portfolio</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet"></link>
+</head>
+<body>
+
+<section id="main">
+    <div class="row">
+        <div class="column">
+            <h2 class="text-center">Claire West</h2>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="small-10 small-offset-1 medium-6 medium-offset-3 column intro">
+            <i class="fa fa-chevron-right"></i>
+            <span>Welcome. Here you can find my resume, my portfolio of web applications, and links to my GitHub and LinkedIn pages.</span>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="small-4 small-offset-2 columns icon">
+            <a id="webapps" href="http://apps.claire-west.ca">
+                <i class="fa fa-folder-open-o"></i>
+                <span>Web Apps</span>
+            </a>
+        </div>
+
+        <div class="small-4 columns end icon">
+            <a id="github" href="https://github.com/claire-west">
+                <i class="fa fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+
+        <!-- <div class="small-4 medium-4 columns icon">
+            <a id="resume" href="#resume">
+                <i class="fa fa-file-text-o"></i>
+                <span>Resume</span>
+            </a>
+        </div> -->
+    </div>
+</section>
+
+<section id="resumePage" hidden>
+    <div class="row header">
+        <div class="column">
+            <h2 class="text-center">Claire West</h2>
+            <p><a href="mailto:contact@claire-west.ca">contact@claire-west.ca</a></p>
+            <p><a href="https://github.com/claire-west">github.com/claire-west</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h3>Objective</h3>
+            <p>To employ and improve my skills in a full-time software development position.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h3>Skills Summary</h3>
+            <ul>
+                <li>Experience with various languages and frameworks including JavaScript, SQL, HTML5, C#, and Java</li>
+                <li>Utilize libraries such as jQuery, Angular, SAPUI5, and Foundation</li>
+                <li>Manage code history with Git repositories, including GitHub pull requests and code reviews</li>
+                <li>Follow Agile methodologies such as Scrum to coordinate development tasks</li>
+                <li>Test and debug programs with automated tests</li>
+                <li>Effectively communicate with coworkers</li>
+                <li>Created a web-based data entry application for the Ontario Curling Council to replace an inefficient paper-based system</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h3>Education</h3>
+            <strong>Computer Programmer/Analyst (Co-op)</strong>
+            <span class="float-right">2013 &#8211; 2016</span>
+            <p>Conestoga College, Kitchener, ON</p>
+            <ul>
+                <li>Graduated with a 3.96 GPA</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h3>Work Experience</h3>
+            <p>SAP Canada, Waterloo, ON<span class="float-right">2016 &#8211; present</span></p>
+            <strong>Application Developer</strong>
+            <ul>
+                <li>Developed a web-based system that enables data access despite unreliable connectivity without sacrificing subsecond response time</li>
+                <li>Created multiple web applications using the jQuery-based SAPUI5 framework and SAP Fiori</li>
+                <li>Adapted an existing cloud system to function with this always-available architecture</li>
+                <li>Wrote and maintained customer-facing documentation</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h3>Activities and Interests</h3>
+            <ul>
+                <li>Creating web applications to address my own everyday problems</li>
+                <li>Playing pen &amp; paper roleplaying games such as Dungeons &amp; Dragons, as well as designing rules and systems for them</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.js"></script>
+<script>
+    (function() {
+        $(document).foundation();
+        $("#footerYear").text(new Date().getFullYear());
+
+        var i = 0;
+        var a = [
+            //$('#resume i'),
+            $('#webapps i'),
+            $('#github i')
+        ];
+
+        var inc = function() {
+            i = (i + 1) % a.length;
+        }
+
+        var fn = function() {
+            a[i].addClass('active');
+            setTimeout(function() {
+                a[i].removeClass('active');
+                setTimeout(function() {
+                    inc();
+                    setTimeout(fn, 750);
+                }, 250);
+            }, 750);
+        }
+
+        setTimeout(fn, 750);
+
+        var fnRehash = function() {
+            if (window.location.hash === '#resume') {
+                $('#main').hide();
+                $('#resumePage').show();
+            } else {
+                $('#resumePage').hide();
+                $('#main').show();
+            }
+        }
+
+        fnRehash();
+
+        $(window).on('hashchange', fnRehash);
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+    text-align: center;
+    overflow-x: hidden;
+    background: #fafafa;
+    color: #222;
+    height: initial;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+#main h2 {
+    margin-top: 12.5vh;
+    font-size: 2;
+    letter-spacing: 0.125rem;
+}
+
+#main .intro {
+    position: relative;
+    text-align: left;
+    font-size: 1.25rem;
+    margin-top: 7.5vh;
+}
+
+#main .intro i {
+    position: absolute;
+    left: -0.5rem;
+    top: 0.325rem;
+}
+
+#main .icon i {
+    font-size: 3rem;
+    margin-top: 10vh;
+    opacity: 1;
+
+    transition: opacity 0.75s ease-out;
+}
+
+#main .icon i.active {
+    opacity: 0.5;
+
+    transition: opacity 0.75s ease-in;
+}
+
+#main .icon i,
+#main .icon span {
+    display: block;
+    text-align: center;
+}
+
+#main footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+#resumePage {
+    text-align: left;
+}
+
+#resumePage .row {
+    max-width: 50rem;
+    margin-bottom: 1.5rem;
+}
+
+#resumePage .header {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+#resumePage h2 {
+    font-size: 1.75rem;
+}
+
+#resumePage h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+#resumePage p, #resumePage ul {
+    margin-bottom: 0;
+}
+
+@media screen and ( max-width: 600px ) {
+    #main h2 {
+        margin-top: 7.5vh;
+    }
+
+    #main .intro {
+        margin-top: 5vh;
+    }
+
+    #main .icon i {
+        margin-top: 7.5vh;
+    }
+}
+
+@media screen and ( orientation: landscape ) and ( max-width: 600px ) {
+    #main h2 {
+        margin-top: 5vh;
+    }
+
+    #main .intro {
+        margin-top: 2.5vh;
+    }
+
+    #main .icon {
+        width: 25%;
+    }
+
+    #main .icon i {
+        margin-top: 7.5vh;
+    }
+}
